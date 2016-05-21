@@ -1,3 +1,6 @@
+/**
+ * Package-info.
+ */
 package com.simpleteam.controllers;
 
 import org.apache.log4j.Logger;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class Photo {
+
     /**
      * get logger.
      */

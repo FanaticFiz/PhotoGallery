@@ -4,16 +4,24 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Start here...
+ * Photo Gallery application.
  */
 @SpringBootApplication
-public final class PhotoGalleryApplication {
+public class PhotoGalleryApplication {
 
     /**
-     * And here...
+     * Creates a new instance.
+     */
+    protected PhotoGalleryApplication() {
+    }
+
+    /**
+     * Start here.
      * @param args not use any parameters.
      */
     public static void main(final String[] args) {
+
         SpringApplication.run(PhotoGalleryApplication.class, args);
     }
+
 }
