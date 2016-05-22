@@ -1,6 +1,7 @@
 package com.simpleteam.utils;
 
 import org.apache.log4j.Logger;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -15,6 +16,7 @@ import java.util.List;
  * @version 0.1
  */
 @Component
+@Scope("prototype")
 public class DirectoryHandler {
     /**
      * Get logger.
@@ -53,11 +55,11 @@ public class DirectoryHandler {
                 if (file.isFile()) {
                     log.debug("Found file: " + file.getName());
                     if (isFileSuitable(file, mask)) {
-                        foundPaths.add(path + File.separator + file.getName());
+                        foundPaths.add(file.getPath());
                     }
                 } else {
                     log.debug(file.getName() + " is a directory");
-                    findAllFilesByMask(path + File.separator + file.getName(), mask);
+                    findAllFilesByMask(file.getPath(), mask);
                 }
             }
         } else {
@@ -76,4 +78,5 @@ public class DirectoryHandler {
     private boolean isFileSuitable(final File file, final String mask) {
         return file.getName().toLowerCase().endsWith(mask.toLowerCase());
     }
+
 }
