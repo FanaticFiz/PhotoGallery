@@ -23,7 +23,7 @@ public class PhoboBySizeMask {
      * @return view
      */
     @RequestMapping("/photo/wh/{sizeMask}")
-    public final String row(final Model model, @PathVariable("sizeMask") final String sizeMask) {
+    public final String bySize(final Model model, @PathVariable("sizeMask") final String sizeMask) {
         log.info("GET");
 
         model.addAttribute("sizeMask", sizeMask);

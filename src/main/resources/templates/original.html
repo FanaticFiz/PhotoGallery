@@ -4,7 +4,8 @@
     <title>Photo Gallery !</title>
     <meta charset="UTF-8"/>
     <link rel='stylesheet' href='/webjars/bootstrap/3.3.6/css/bootstrap.min.css' type="text/css"/>
-    <script type="text/javascript" src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/2.2.4/jquery.min.js"></script>
 </head>
 
     <body>
@@ -12,7 +13,6 @@
             <div class="container" style="margin-top: 50px">
                 <div class="row">
                     <h3>original page</h3>
-                    <!--/*@thymesVar id="realPhotoSize" type=""*/-->
                     <h4 th:text="${realPhotoSize}"></h4>
                     <a href="/photo" class="btn btn-success btn-md btn-block">Back...</a>
                 </div>

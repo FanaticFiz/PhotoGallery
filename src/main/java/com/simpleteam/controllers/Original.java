@@ -20,7 +20,7 @@ public class Original {
      * @param model Map for add attributes
      * @return view
      */
-    @RequestMapping("/original")
+    @RequestMapping("/photo/original")
     public final String original(final Model model) {
         log.debug("GET");
 

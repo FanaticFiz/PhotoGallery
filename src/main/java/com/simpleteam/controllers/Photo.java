@@ -73,7 +73,7 @@ public class Photo {
         allFilesByMask.stream().forEach(System.out::println);
 
         model.addAttribute("showPhoto", 1)
-             .addAttribute("photoCounter", allFilesByMask.size());
+             .addAttribute("photos", allFilesByMask);
         return "photo";
     }
 
