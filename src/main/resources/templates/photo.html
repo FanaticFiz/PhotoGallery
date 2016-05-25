@@ -24,15 +24,20 @@
                             </div>
                         </form>
                     </div>
-                    <div th:case="1" class="panel panel-default col-md-12">
-                        <h4 th:text="'Всего найдено: ' + ${photos.size()}"></h4>
-                        <div th:each="photo : ${photos}" class="col-md-3">
-                            <img th:src="${photo}" class="img-rounded" width="200" height="200"/>
-                        </div>
+                    <div th:if="${hasError} != null" class="alert alert-danger col-md-3 pull-right">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong th:text="${hasError}"></strong>
                     </div>
 
-                    <img th:src="@{/img/logo_volunteer.png}" class="img-rounded" width="200" height="200"/>
-
+                    <div th:case="1" class="text-center">
+                        <h2>The Photos has been uploaded!</h2><br />
+                        <div class="panel panel-default col-md-12">
+                            <div th:each="photo, iterStat : ${photos}" class="col-md-3" style="padding-bottom: 25px; padding-top: 25px">
+                                <img th:src="'/photo/' + ${iterStat.index}" class="img-rounded" width="200" height="200"/>
+                            </div>
+                        </div>
+                        <h3 th:text="'Number of uploaded photos: ' + ${photos.length}"></h3>
+                    </div>
                 </div>
             </div>
         </div>

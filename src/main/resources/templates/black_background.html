@@ -8,13 +8,15 @@
     <script type="text/javascript" src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
-    <body>
+    <body style="background-color: black">
         <div class="section">
             <div class="container" style="margin-top: 50px">
                 <div class="row">
-                    <h3>Blackbackground page</h3>
-                    <a href="/photo" type="button" class="btn btn-success btn-md btn-block">Back...</a>
+                    <div th:each="photo, iterStat : ${photos}" class="col-md-3" style="padding-bottom: 25px; padding-top: 25px">
+                        <img th:src="'/photo/' + ${iterStat.index}" class="img-rounded" width="200" height="200"/>
+                    </div>
                 </div>
+                <a href="/photo" type="button" class="btn btn-success btn-md btn-block">Back...</a>
             </div>
         </div>
     </body>
