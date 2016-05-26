@@ -51,7 +51,7 @@ public class DirectoryHandler {
             for (File file : files) {
                 if (file.isFile()) {
                     log.debug("Found file: " + file.getName());
-                    if (isFileSuitable(file, mask)) {
+                    if (fileHandler.isFileSuitable(file, mask)) {
                         foundFiles.add(fileHandler.convertToByte(file.getPath()));
                     }
                 } else {
@@ -72,17 +72,6 @@ public class DirectoryHandler {
      */
     public final boolean isPathValid(final String path) {
         return new File(path).exists();
-    }
-
-    /**
-     * Check file for type.
-     *
-     * @param file incoming file
-     * @param mask something like '.png'
-     * @return true if file is end like a mask
-     */
-    private boolean isFileSuitable(final File file, final String mask) {
-        return file.getName().toLowerCase().endsWith(mask.toLowerCase());
     }
 
     /**

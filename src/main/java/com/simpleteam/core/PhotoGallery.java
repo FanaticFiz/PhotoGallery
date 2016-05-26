@@ -53,9 +53,7 @@ public class PhotoGallery {
         log.debug("Collect files in: " + dirPath + " / By mask: " + mask);
 
         dirHandler.setFoundFiles(new ArrayList<>());
-        if (dirHandler.isPathValid(dirPath)) {
-            photos = dirHandler.findFilesByMask(dirPath, mask);
-        }
+        photos = dirHandler.findFilesByMask(dirPath, mask);
     }
 
     /**

@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -46,4 +47,16 @@ public class FileHandler {
             return new byte[0];
         }
     }
+
+    /**
+     * Check file for type.
+     *
+     * @param file incoming file
+     * @param mask something like '.png'
+     * @return true if file is end like a mask
+     */
+    public final boolean isFileSuitable(final File file, final String mask) {
+        return file.getName().toLowerCase().endsWith(mask.toLowerCase());
+    }
+
 }

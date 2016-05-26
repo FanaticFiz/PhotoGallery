@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.context.WebApplicationContext;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,11 +16,6 @@ import static org.junit.Assert.assertEquals;
 @SpringApplicationConfiguration(classes = PhotoGalleryApplication.class)
 @WebAppConfiguration
 public class PhotoGalleryApplicationTests {
-    private MockMvc mockMvc;
-
-    @Autowired
-    private WebApplicationContext context;
-
     @Autowired
     PhotoGallery photoGallery;
 
@@ -39,7 +32,8 @@ public class PhotoGalleryApplicationTests {
 
     @Test
     public void DirHandlerTest() throws Exception {
-        assertEquals(0, directoryHandler.findFilesByMask("file", "mask").size());
+        assertEquals(0, directoryHandler.findFilesByMask("wrongWay", "wrongMask").size());
+        assertEquals(16, directoryHandler.findFilesByMask("C:\\Temp\\111111111111111\\5\\2", ".png").size());
     }
 
     @Test
@@ -53,6 +47,5 @@ public class PhotoGalleryApplicationTests {
         PhotoGalleryApplication application = new PhotoGalleryApplication();
         application.main(new String[] {"", ""});
     }
-
 
 }
