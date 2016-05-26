@@ -1,7 +1,6 @@
 package com.simpleteam;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,16 +50,22 @@ public class ControllersTests {
                 .andExpect(status().isOk());
     }
 
-    @Ignore
     @Test
-    public void photoPost() throws Exception {
+    public void photoPostBedRequestTest() throws Exception {
+        this.mockMvc
+                .perform(post("/photo")
+                        .accept(MediaType.TEXT_HTML))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    public void photoPostRedirectTest() throws Exception {
         this.mockMvc
                 .perform(post("/photo")
                         .param("photoDir", "photoDir")
-                        .param("screenWidth", "200x200")
-                        .accept(MediaType.TEXT_HTML))
-                .andExpect(status().isOk())
-                .andExpect(view().name("photo"));
+                        .param("screenWidth", "1000"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(view().name("redirect:/photo"));
     }
 
     @Test
