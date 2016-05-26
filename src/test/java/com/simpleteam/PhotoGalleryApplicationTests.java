@@ -33,7 +33,6 @@ public class PhotoGalleryApplicationTests {
     @Test
     public void DirHandlerTest() throws Exception {
         assertEquals(0, directoryHandler.findFilesByMask("wrongWay", "wrongMask").size());
-        assertEquals(16, directoryHandler.findFilesByMask("C:\\Temp\\111111111111111\\5\\2", ".png").size());
     }
 
     @Test
