@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Photo by a line controller.
+ *
+ * @author Fiz
+ * @version 0.1
  */
 @Controller
 public class Row {

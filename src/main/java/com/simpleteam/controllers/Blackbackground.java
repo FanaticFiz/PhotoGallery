@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Black background controller.
+ *
+ * @author Fiz
+ * @version 0.1
  */
 @Controller
 public class BlackBackground {

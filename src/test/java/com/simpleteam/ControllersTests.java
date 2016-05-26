@@ -78,9 +78,18 @@ public class ControllersTests {
     }
 
     @Test
-    public void bySizeGet() throws Exception {
+    public void bySizeGetTest() throws Exception {
         this.mockMvc
                 .perform(get("/photo/wh/{sizeMask}", "200x200")
+                        .accept(MediaType.TEXT_HTML))
+                .andExpect(status().isOk())
+                .andExpect(view().name("photoBySizeMask"));
+    }
+
+    @Test
+    public void bySizeGetExceptionTest() throws Exception {
+        this.mockMvc
+                .perform(get("/photo/wh/{sizeMask}", "wrong")
                         .accept(MediaType.TEXT_HTML))
                 .andExpect(status().isOk())
                 .andExpect(view().name("photoBySizeMask"));

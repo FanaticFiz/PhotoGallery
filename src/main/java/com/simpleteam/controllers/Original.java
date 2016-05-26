@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Original controller.
+ *
+ * @author Fiz
+ * @version 0.1
  */
 @Controller
 public class Original {

@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Photo Gallery from simpleTeam.
+ *
+ * @author Fiz
+ * @version 0.1
  */
 @SpringBootApplication
 public class PhotoGalleryApplication {

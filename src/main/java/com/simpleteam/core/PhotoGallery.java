@@ -13,6 +13,7 @@ import java.util.List;
  * Contain photos as list of byte array.
  * By default the Gallery class is use ".png" mask.
  *
+ * @author Fiz
  * @version 0.1
  */
 @Component

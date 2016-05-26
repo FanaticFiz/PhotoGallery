@@ -12,7 +12,8 @@ import java.util.List;
  * Simple Directory handler - utility class.
  * Can scan directory for files by specified mask.
  *
- * @version 0.1
+ * @author Alexandr Bogdan, Fiz
+ * @version 0.2
  */
 @Component
 public class DirectoryHandler {

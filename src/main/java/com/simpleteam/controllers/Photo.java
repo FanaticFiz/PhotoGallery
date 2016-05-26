@@ -19,6 +19,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 /**
  * Photo controller.
  * Also redirect '/' to photo...
+ *
+ * @author Fiz
+ * @version 0.1
  */
 @Controller
 public class Photo {

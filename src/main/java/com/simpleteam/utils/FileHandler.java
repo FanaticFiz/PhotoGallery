@@ -12,7 +12,8 @@ import java.io.IOException;
  * Simple file handler from simpleTeam.
  * The FileHandler can only convert file to byte[] array.
  *
- * @version 0.1
+ * @author Alexandr Bogdan, Fiz
+ * @version 0.2
  */
 @Component
 public class FileHandler {
