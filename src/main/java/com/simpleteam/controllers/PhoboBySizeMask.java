@@ -19,6 +19,16 @@ public class PhoboBySizeMask {
     private final Logger log = Logger.getLogger(PhoboBySizeMask.class);
 
     /**
+     * Default size X.
+     */
+    private final int defaultX = 200;
+
+    /**
+     * Default size Y.
+     */
+    private final int defaultY = 200;
+
+    /**
      * Use PhotoGallery class.
      */
     @Autowired
@@ -34,8 +44,8 @@ public class PhoboBySizeMask {
     public final String bySize(final Model model, @PathVariable("sizeMask") final String sizeMask) {
         log.info("GET");
 
-        int sizeX = 200;
-        int sizeY = 200;
+        int sizeX = defaultX;
+        int sizeY = defaultY;
         try {
             String[] sizeXY = sizeMask.split("x");
             sizeX = Integer.parseInt(sizeXY[0]);

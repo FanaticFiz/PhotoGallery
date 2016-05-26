@@ -87,7 +87,7 @@ public class DirectoryHandler {
 
     /**
      * Getter.
-     * @return
+     * @return list of byte
      */
     public final List<byte[]> getFoundFiles() {
         return foundFiles;
@@ -95,7 +95,7 @@ public class DirectoryHandler {
 
     /**
      * Setter.
-     * @param files
+     * @param files List<byte[]>
      */
     public final void setFoundFiles(final List<byte[]> files) {
         this.foundFiles = files;

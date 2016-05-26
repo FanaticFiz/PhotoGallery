@@ -9,7 +9,11 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
@@ -66,10 +70,11 @@ public class Photo {
      *
      * @param model Map for add attributes
      * @param path  way to directory
+     * @param redirectAttr for send attribute.
      * @return 'photo' template
      */
     @RequestMapping(value = "/photo", method = RequestMethod.POST)
-    public final String photoHandler(final Model model, RedirectAttributes redirectAttr,
+    public final String photoHandler(final Model model, final RedirectAttributes redirectAttr,
                                      @RequestParam("photoDir") final String path) {
         log.debug("RequestMethod POST. Value: " + path);
         if (path == null || !dirHandler.isPathValid(path)) {
