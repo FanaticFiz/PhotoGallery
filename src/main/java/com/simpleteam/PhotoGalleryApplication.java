@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Photo Gallery application.
+ * Photo Gallery from simpleTeam.
  */
 @SpringBootApplication
 public class PhotoGalleryApplication {
@@ -20,7 +20,6 @@ public class PhotoGalleryApplication {
      * @param args not use any parameters.
      */
     public static void main(final String[] args) {
-
         SpringApplication.run(PhotoGalleryApplication.class, args);
     }
 

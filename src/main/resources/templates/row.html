@@ -7,12 +7,9 @@
     <body>
         <nav th:replace="fragments/navbar :: navbar"></nav>
 
-        <div class="section">
-            <div class="container" style="margin-top: 50px">
-                <div class="row">
-                    <h3>original page</h3>
-                    <h4 th:text="${rowCount}"></h4>
-                </div>
+        <div class="section" style="margin-top: 50px">
+            <div th:each="photo, iterStat : ${photos}" class="img-thumbnail">
+                <img th:src="'/photo/' + ${iterStat.index}" class="img-rounded" th:width="${size}" th:height="${size}"/>
             </div>
         </div>
     </body>

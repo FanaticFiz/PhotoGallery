@@ -28,6 +28,12 @@ public class PhotoGallery {
     private String mask = ".png";
 
     /**
+     * Screen width.
+     * Use in row controller.
+     */
+    private Integer screenWidth;
+
+    /**
      * Contain all found photos in byte.
      */
     private List<byte[]> photos = new ArrayList<>();
@@ -73,5 +79,21 @@ public class PhotoGallery {
      */
     public final void setMask(final String maskForFile) {
         this.mask = maskForFile;
+    }
+
+    /**
+     * Getter.
+     * @return int
+     */
+    public final Integer getScreenWidth() {
+        return screenWidth;
+    }
+
+    /**
+     * Setter.
+     * @param width set screen width
+     */
+    public final void setScreenWidth(final Integer width) {
+        screenWidth = width;
     }
 }

@@ -3,7 +3,11 @@
     <head>
         <object th:replace="fragments/head :: head" th:remove="tag"></object>
     </head>
-
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#holderWidth").val($(".section").width());
+        });
+    </script>
     <body>
         <div th:if="${showPhoto} == 1">
             <nav th:replace="fragments/navbar :: navbar"></nav>
@@ -21,6 +25,7 @@
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-md btn-block">Create Gallery</button>
                             </div>
+                            <input type="text" id="holderWidth" name="scrinWidth" hidden="true"/>
                         </form>
                     </div>
                     <div th:if="${hasError} != null" class="alert alert-danger col-md-3 pull-right">

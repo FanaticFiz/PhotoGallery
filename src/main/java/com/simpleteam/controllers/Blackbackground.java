@@ -28,8 +28,8 @@ public class Blackbackground {
      * @param model Map for add attributes
      * @return view
      */
-    @RequestMapping("/photo/blackbackground")
-    public final String blackbackground(final Model model) {
+    @RequestMapping("/photo/blackBackground")
+    public final String blackBackground(final Model model) {
         log.debug("GET");
 
         model.addAttribute("photos", new int[gallery.getPhotos().size()]);

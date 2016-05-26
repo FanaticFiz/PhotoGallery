@@ -70,12 +70,14 @@ public class Photo {
      *
      * @param model Map for add attributes
      * @param path  way to directory
-     * @param redirectAttr for send attribute.
+     * @param redirectAttr for send attribute to another page
+     * @param screenWidth Screen width
      * @return 'photo' template
      */
     @RequestMapping(value = "/photo", method = RequestMethod.POST)
     public final String photoHandler(final Model model, final RedirectAttributes redirectAttr,
-                                     @RequestParam("photoDir") final String path) {
+                                     @RequestParam("photoDir") final String path,
+                                     @RequestParam("screenWidth") final int screenWidth) {
         log.debug("RequestMethod POST. Value: " + path);
         if (path == null || !dirHandler.isPathValid(path)) {
             log.warn("Incoming path is incorrect.");
@@ -83,6 +85,7 @@ public class Photo {
             return "redirect:/photo";
         }
 
+        gallery.setScreenWidth(screenWidth);
         gallery.collectAllFilesByMask(path);
 
         model.addAttribute("showPhoto", 1)

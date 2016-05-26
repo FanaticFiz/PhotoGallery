@@ -1,6 +1,8 @@
 package com.simpleteam.controllers;
 
+import com.simpleteam.core.PhotoGallery;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,17 @@ public class Row {
     private final Logger log = Logger.getLogger(Row.class);
 
     /**
+     * Padding between photos.
+     */
+    private final int padding = 20;
+
+    /**
+     * Use PhotoGallery class.
+     */
+    @Autowired
+    private PhotoGallery gallery;
+
+    /**
      * Catch length.
      * @param model Map for add attributes
      * @param rowCount Line must be certain length
@@ -24,9 +37,10 @@ public class Row {
      */
     @RequestMapping("/photo/row/{count}")
     public final String rowGet(final Model model, @PathVariable("count") final Integer rowCount) {
-        log.info("GET");
+        log.debug("Row count: " + rowCount);
 
-        model.addAttribute("rowCount", rowCount);
+        model.addAttribute("size", (gallery.getScreenWidth() - rowCount * padding) / rowCount)
+             .addAttribute("photos", new int[gallery.getPhotos().size()]);
         return "row";
     }
 
