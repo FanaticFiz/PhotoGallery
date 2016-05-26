@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Black background controller.
  */
 @Controller
-public class Blackbackground {
+public class BlackBackground {
     /**
      * Get logger.
      */
-    private final Logger log = Logger.getLogger(Blackbackground.class);
+    private final Logger log = Logger.getLogger(BlackBackground.class);
 
     /**
      * Use PhotoGallery class.
@@ -28,7 +28,7 @@ public class Blackbackground {
      * @param model Map for add attributes
      * @return view
      */
-    @RequestMapping("/photo/blackBackground")
+    @RequestMapping("/photo/blackbackground")
     public final String blackBackground(final Model model) {
         log.debug("GET");
 

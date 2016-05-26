@@ -40,6 +40,10 @@ public class FileHandler {
         } catch (IOException e) {
             log.error("Error convert file to byte[] ", e);
         }
-        return byteArrayOutputStream.toByteArray();
+        if (byteArrayOutputStream != null) {
+            return byteArrayOutputStream.toByteArray();
+        } else {
+            return new byte[0];
+        }
     }
 }

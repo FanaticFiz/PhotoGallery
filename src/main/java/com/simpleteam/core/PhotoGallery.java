@@ -31,7 +31,7 @@ public class PhotoGallery {
      * Screen width.
      * Use in row controller.
      */
-    private Integer screenWidth;
+    private int screenWidth;
 
     /**
      * Contain all found photos in byte.
@@ -50,11 +50,12 @@ public class PhotoGallery {
      * @param dirPath Path to directory
      */
     public final void collectAllFilesByMask(final String dirPath) {
-        log.debug("Collect files in: " + dirPath + " By mask: " + mask);
+        log.debug("Collect files in: " + dirPath + " / By mask: " + mask);
 
-        dirHandler.setFoundFiles(new ArrayList<byte[]>());
-        photos = dirHandler.findFilesByMask(dirPath, mask);
-
+        dirHandler.setFoundFiles(new ArrayList<>());
+        if (dirHandler.isPathValid(dirPath)) {
+            photos = dirHandler.findFilesByMask(dirPath, mask);
+        }
     }
 
     /**
@@ -85,7 +86,7 @@ public class PhotoGallery {
      * Getter.
      * @return int
      */
-    public final Integer getScreenWidth() {
+    public final int getScreenWidth() {
         return screenWidth;
     }
 
@@ -93,7 +94,7 @@ public class PhotoGallery {
      * Setter.
      * @param width set screen width
      */
-    public final void setScreenWidth(final Integer width) {
+    public final void setScreenWidth(final int width) {
         screenWidth = width;
     }
 }
