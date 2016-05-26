@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version 0.1
  */
 @Controller
-public class BlackBackground {
+public class Black {
     /**
      * Get logger.
      */
-    private final Logger log = Logger.getLogger(BlackBackground.class);
+    private final Logger log = Logger.getLogger(Black.class);
 
     /**
      * Use PhotoGallery class.
